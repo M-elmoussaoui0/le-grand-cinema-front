@@ -30,3 +30,18 @@ export interface Seance {
   salle: Salle;
   placesRestantes?: PlacesRestantes;
 }
+
+export type StatutPlace = 'libre' | 'occupee' | 'guichet';
+
+export interface PlacePlan {
+  id: number;
+  numero: number;
+  type: 'standard' | 'pmr' | 'vip';
+  statut: StatutPlace;
+}
+
+export interface Plan {
+  seanceId: number;
+  placesRestantes: PlacesRestantes;
+  rangees: { rangee: string; places: PlacePlan[] }[];
+}

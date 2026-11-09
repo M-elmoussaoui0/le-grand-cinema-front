@@ -302,3 +302,23 @@ a:focus-visible {
 .horaire strong { font-size: 1.1rem; }
 .horaire .puce { justify-self: center; font-size: 0.7rem; padding: 1px 8px; }
 .horaire.complet { opacity: 0.55; }
+
+/* Plan de salle */
+.plan { display: grid; gap: 16px; }
+.ecran { margin: 0 auto; width: 80%; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--texte-doux); padding-bottom: 8px; border-bottom: 4px solid var(--texte-doux); border-radius: 0 0 50% 50% / 0 0 14px 14px; }
+.plan-defilement { overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
+.plan-grille { display: grid; gap: 6px; width: max-content; margin: 0 auto; }
+.rangee { display: flex; gap: 5px; align-items: center; }
+.rangee .place:nth-of-type(10) { margin-right: 14px; }
+.rangee-nom { width: 18px; text-align: center; font-size: 0.75rem; color: var(--texte-doux); font-weight: 700; }
+.place { width: 28px; height: 28px; border-radius: 7px 7px 4px 4px; border: 0; padding: 0; font-size: 0.75rem; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; background: #5d6b62; color: #fff; }
+.place.libre { background: #4a7a5e; }
+.place.libre:hover { background: #5f9a77; }
+.place.choisie { background: var(--accent); box-shadow: 0 0 0 2px #fff inset; }
+.place.occupee { background: #3a322c; cursor: not-allowed; }
+.place.guichet { background: #6b5426; cursor: not-allowed; }
+.legende { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; margin: 0; font-size: 0.85rem; color: var(--texte-doux); }
+.legende li { display: flex; align-items: center; gap: 6px; }
+.legende .place { width: 18px; height: 18px; cursor: default; font-size: 0.6rem; }
+.barre-action { position: sticky; bottom: 64px; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 12px 16px; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4); }
+@media (min-width: 760px) { .barre-action { bottom: 16px; } }

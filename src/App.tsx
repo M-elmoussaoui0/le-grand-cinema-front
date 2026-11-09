@@ -6,6 +6,7 @@ import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
 import Programmation from './pages/Programmation';
+import SeancePage from './pages/SeancePage';
 
 function Introuvable() {
   const { t } = useI18n();
@@ -27,6 +28,7 @@ export default function App() {
       <main className="contenu">
         <Routes>
           <Route path="/" element={<Programmation />} />
+          <Route path="/seances/:id" element={<SeancePage />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route
