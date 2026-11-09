@@ -118,3 +118,13 @@ export interface Remplissage {
     recettes: number;
   }[];
 }
+
+export interface Alerte {
+  type: 'presque_complet' | 'complet' | 'pic_ventes';
+  niveau: 'attention' | 'critique';
+  seanceId: number;
+  film: string;
+  salle: string;
+  debut: string;
+  message: string;
+}

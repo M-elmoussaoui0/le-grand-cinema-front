@@ -148,6 +148,9 @@ export const fr = {
   'tableau.vendues': 'Vendues',
   'tableau.taux': 'Taux',
   'tableau.suivre': 'Suivre',
+  'alertes.titre': 'Alertes',
+  'alertes.toutes': 'Voir les {n} alertes',
+  'alertes.moins': 'Réduire',
 };
 
 export type Cle = keyof typeof fr;

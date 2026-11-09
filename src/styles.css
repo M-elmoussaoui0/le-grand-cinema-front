@@ -362,3 +362,8 @@ fieldset { border: 1px solid var(--ligne); }
 .tableau th, .tableau td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--ligne); white-space: nowrap; }
 .tableau th { color: var(--texte-doux); font-weight: 600; font-size: 0.8rem; }
 .tableau td.fort { color: var(--accent); font-weight: 800; }
+.alertes { display: grid; gap: 8px; border: 1px solid #6b5426; background: #1f190f; border-radius: var(--rayon); padding: 12px; }
+.alertes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.alerte-ligne { display: flex; justify-content: space-between; gap: 12px; padding: 8px 10px; border-radius: 10px; font-size: 0.9rem; border-left: 4px solid var(--or); background: #2a2114; }
+.alerte-ligne.critique { border-left-color: var(--accent); background: #2b1513; }
+.alerte-ligne a { flex: none; font-weight: 700; }
