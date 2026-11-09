@@ -41,6 +41,9 @@ export const fr = {
   'programme.toutesLangues': 'Toutes',
   'programme.aucuneSeance': 'Aucune séance ce jour-là.',
   'programme.duree': '{minutes} min',
+  'places.complet': 'Complet',
+  'places.dernieres': 'Plus que {n} places',
+  'places.restantes': '{n} places',
 };
 
 export type Cle = keyof typeof fr;
