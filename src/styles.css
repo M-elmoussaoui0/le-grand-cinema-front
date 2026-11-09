@@ -354,3 +354,5 @@ fieldset { border: 1px solid var(--ligne); }
 .chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
 .chiffres > div { display: grid; gap: 2px; background: var(--surface-2); border-radius: 12px; padding: 12px; }
 .chiffre { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.jauge { height: 12px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.jauge > div { height: 100%; border-radius: 999px; transition: width 0.4s ease; }

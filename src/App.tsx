@@ -3,6 +3,7 @@ import { RouteProtegee } from './auth/RouteProtegee';
 import { Entete } from './components/Entete';
 import { useI18n } from './i18n/I18nContext';
 import AdminLayout from './pages/admin/AdminLayout';
+import Direct from './pages/admin/Direct';
 import Guichet from './pages/admin/Guichet';
 import Seances from './pages/admin/Seances';
 import BilletPage from './pages/BilletPage';
@@ -79,6 +80,7 @@ export default function App() {
           >
             <Route index element={<Navigate to="/admin/seances" replace />} />
             <Route path="seances" element={<Seances />} />
+            <Route path="direct" element={<Direct />} />
             <Route path="guichet" element={<Guichet />} />
           </Route>
           <Route path="*" element={<Introuvable />} />
