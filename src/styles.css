@@ -356,3 +356,9 @@ fieldset { border: 1px solid var(--ligne); }
 .chiffre { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
 .jauge { height: 12px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
 .jauge > div { height: 100%; border-radius: 999px; transition: width 0.4s ease; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.tableau-defilement { overflow-x: auto; }
+.tableau { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.tableau th, .tableau td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--ligne); white-space: nowrap; }
+.tableau th { color: var(--texte-doux); font-weight: 600; font-size: 0.8rem; }
+.tableau td.fort { color: var(--accent); font-weight: 800; }

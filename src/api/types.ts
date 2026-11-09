@@ -96,3 +96,25 @@ export interface SuiviDirect {
   recettes: number;
   misAJourA: string;
 }
+
+export interface Remplissage {
+  jour: string;
+  resume: {
+    seances: number;
+    placesVendues: number;
+    capacite: number;
+    tauxRemplissage: number;
+    recettes: number;
+  };
+  parFilm: { film: string; vendues: number; capacite: number; recettes: number; tauxRemplissage: number }[];
+  seances: {
+    seanceId: number;
+    film: string;
+    salle: string;
+    debut: string;
+    capacite: number;
+    vendues: number;
+    tauxRemplissage: number;
+    recettes: number;
+  }[];
+}

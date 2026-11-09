@@ -6,6 +6,7 @@ import AdminLayout from './pages/admin/AdminLayout';
 import Direct from './pages/admin/Direct';
 import Guichet from './pages/admin/Guichet';
 import Seances from './pages/admin/Seances';
+import TableauDeBord from './pages/admin/TableauDeBord';
 import BilletPage from './pages/BilletPage';
 import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
@@ -78,7 +79,8 @@ export default function App() {
               </RouteProtegee>
             }
           >
-            <Route index element={<Navigate to="/admin/seances" replace />} />
+            <Route index element={<Navigate to="/admin/tableau-de-bord" replace />} />
+            <Route path="tableau-de-bord" element={<TableauDeBord />} />
             <Route path="seances" element={<Seances />} />
             <Route path="direct" element={<Direct />} />
             <Route path="guichet" element={<Guichet />} />
