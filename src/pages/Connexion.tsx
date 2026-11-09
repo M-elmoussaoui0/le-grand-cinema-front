@@ -1,12 +1,11 @@
 import { FormEvent, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ErreurApi } from '../api/client';
 import { useAuth } from '../auth/AuthContext';
 import { MessageErreur } from '../components/Etat';
 import { useI18n } from '../i18n/I18nContext';
 
 export default function Connexion() {
-  const { t } = useI18n();
+  const { t, messageErreur } = useI18n();
   const { connecter } = useAuth();
   const navigate = useNavigate();
   const retour = (useLocation().state as { retour?: string } | null)?.retour ?? '/';
@@ -23,7 +22,7 @@ export default function Connexion() {
       await connecter(email, motDePasse);
       navigate(retour, { replace: true });
     } catch (err) {
-      setErreur(err instanceof ErreurApi ? err.message : t('commun.erreur'));
+      setErreur(messageErreur(err));
     } finally {
       setEnvoi(false);
     }

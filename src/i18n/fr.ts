@@ -161,6 +161,16 @@ export const fr = {
   'scanner.valide': 'Entrée autorisée',
   'scanner.refuse': 'Entrée refusée',
   'direct.entrees': 'spectateurs entrés',
+  'langue.changer': 'English',
+  'erreur.0': 'Connexion au serveur impossible. Vérifiez votre réseau.',
+  'erreur.400': 'La demande n’est pas valide.',
+  'erreur.401': 'E-mail ou mot de passe incorrect, ou session expirée.',
+  'erreur.402': 'Paiement refusé par la banque. Essayez un autre moyen de paiement.',
+  'erreur.403': 'Accès réservé.',
+  'erreur.404': 'Introuvable.',
+  'erreur.409': 'Une des places choisies vient d’être réservée. Choisissez une autre place.',
+  'erreur.410': 'Le délai de paiement est dépassé : les places ont été libérées.',
+  'erreur.429': 'Trop de tentatives. Patientez une minute.',
 };
 
 export type Cle = keyof typeof fr;

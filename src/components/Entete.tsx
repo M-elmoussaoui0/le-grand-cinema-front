@@ -3,7 +3,7 @@ import { useAuth } from '../auth/AuthContext';
 import { useI18n } from '../i18n/I18nContext';
 
 export function Entete() {
-  const { t } = useI18n();
+  const { t, langue, changerLangue } = useI18n();
   const { utilisateur } = useAuth();
   return (
     <header className="entete">
@@ -25,6 +25,14 @@ export function Entete() {
               <NavLink to="/connexion">{t('nav.connexion')}</NavLink>
             )}
           </nav>
+          <button
+            className="bouton secondaire petit langue"
+            lang={langue === 'fr' ? 'en' : 'fr'}
+            onClick={() => changerLangue(langue === 'fr' ? 'en' : 'fr')}
+          >
+            {langue === 'fr' ? 'EN' : 'FR'}
+            <span className="sr-only"> – {t('langue.changer')}</span>
+          </button>
         </div>
       </div>
     </header>

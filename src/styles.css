@@ -374,3 +374,4 @@ fieldset { border: 1px solid var(--ligne); }
 .verdict.ok { background: #14532d; color: #dcfce7; }
 .verdict.refus { background: #7f1d1d; color: #fee2e2; }
 .camera { width: 100%; border-radius: 12px; background: #000; aspect-ratio: 4 / 3; object-fit: cover; }
+.langue { min-width: 48px; }

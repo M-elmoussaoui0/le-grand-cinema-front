@@ -1,6 +1,5 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ErreurApi } from '../api/client';
 import { useAuth } from '../auth/AuthContext';
 import { MessageErreur } from '../components/Etat';
 import { useI18n } from '../i18n/I18nContext';
@@ -10,7 +9,7 @@ export const motDePasseValide = (mdp: string) =>
   mdp.length >= 8 && /[a-z]/.test(mdp) && /[A-Z]/.test(mdp) && /\d/.test(mdp);
 
 export default function Inscription() {
-  const { t } = useI18n();
+  const { t, messageErreur } = useI18n();
   const { inscrire } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ prenom: '', nom: '', email: '', motDePasse: '' });
@@ -28,7 +27,7 @@ export default function Inscription() {
       await inscrire(form);
       navigate('/', { replace: true });
     } catch (err) {
-      setErreur(err instanceof ErreurApi ? err.message : t('commun.erreur'));
+      setErreur(messageErreur(err));
     }
   }
 

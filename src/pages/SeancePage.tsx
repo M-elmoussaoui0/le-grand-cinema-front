@@ -18,7 +18,7 @@ export function nomsPlaces(plan: Plan, selection: number[]): string[] {
 
 export default function SeancePage() {
   const { id } = useParams();
-  const { t, locale } = useI18n();
+  const { t, locale, messageErreur } = useI18n();
   const [selection, setSelection] = useState<number[]>([]);
   const [erreur, setErreur] = useState<string | null>(null);
   const [envoi, setEnvoi] = useState(false);
@@ -42,7 +42,7 @@ export default function SeancePage() {
       });
       navigate(`/reservations/${r.id}/paiement`, { state: r });
     } catch (e) {
-      setErreur(e instanceof ErreurApi ? e.message : t('commun.erreur'));
+      setErreur(messageErreur(e));
       if (e instanceof ErreurApi && e.statut === 409) {
         setSelection([]);
         await plan.recharger();
