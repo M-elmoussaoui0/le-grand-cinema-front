@@ -113,6 +113,20 @@ export const fr = {
   'admin.seanceCreee': 'Séance créée. Fin prévue à {fin}.',
   'admin.seancesDuJour': 'Séances de ce jour',
   'admin.placesLibres': 'places libres',
+  'admin.guichet': 'Guichet',
+  'guichet.titre': 'Vente au guichet',
+  'guichet.seance': 'Séance d’aujourd’hui',
+  'guichet.restantesGuichet': 'places guichet restantes',
+  'guichet.restantesEnLigne': 'places en ligne restantes',
+  'guichet.nombre': 'Nombre de billets',
+  'guichet.vendre': 'Encaisser {montant}',
+  'guichet.vendu': 'Billets vendus : places {places}.',
+  'guichet.quota': 'Quota guichet',
+  'guichet.explicationQuota':
+    'Places des dernières rangées gardées pour les spectateurs sans smartphone. Elles ne sont pas vendues en ligne.',
+  'guichet.nouveauQuota': 'Nombre de places gardées',
+  'guichet.enregistrer': 'Enregistrer le quota',
+  'guichet.quotaModifie': 'Quota enregistré : {n} places gardées pour le guichet.',
 };
 
 export type Cle = keyof typeof fr;
