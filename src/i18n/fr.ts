@@ -35,6 +35,12 @@ export const fr = {
   'compte.supprimer': 'Supprimer mon compte',
   'compte.confirmerSuppression': 'Oui, supprimer définitivement',
   'compte.annuler': 'Annuler',
+  'programme.titre': 'À l’affiche',
+  'programme.choixJour': 'Choisir le jour',
+  'programme.aujourdhui': 'Aujourd’hui',
+  'programme.toutesLangues': 'Toutes',
+  'programme.aucuneSeance': 'Aucune séance ce jour-là.',
+  'programme.duree': '{minutes} min',
 };
 
 export type Cle = keyof typeof fr;
