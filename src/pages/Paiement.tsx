@@ -65,8 +65,8 @@ export default function Paiement() {
       <section className="pile" style={{ maxWidth: 480, margin: '0 auto' }}>
         <h1>{t('paiement.reussi')}</h1>
         <p className="alerte succes">{t('paiement.merci')}</p>
-        <Link className="bouton large" to="/">
-          {t('commun.retour')}
+        <Link className="bouton large" to={`/billets/${id}`}>
+          {t('paiement.voirBillet')}
         </Link>
       </section>
     );

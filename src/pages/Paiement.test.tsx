@@ -41,6 +41,7 @@ describe('US4 – Réserver et payer sur mobile (front)', () => {
     page();
     await userEvent.click(screen.getByRole('button', { name: /Payer 21,00/ }));
     expect(await screen.findByRole('heading', { name: 'Paiement accepté' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Voir mon billet' })).toHaveAttribute('href', '/billets/42');
     expect(JSON.parse(String(fetch.mock.calls[0][1]?.body))).toEqual({
       moyen: 'apple_pay',
       jetonPaiement: 'tok_visa',

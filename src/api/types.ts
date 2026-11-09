@@ -54,3 +54,15 @@ export interface ReservationCreee {
   payerAvant: string;
   placeIds: number[];
 }
+
+export interface Billet {
+  reservationId: number;
+  codeBillet: string;
+  qrCode: string;
+  film: string;
+  salle: string;
+  debut: string;
+  langue: string;
+  places: string[];
+  montantTotal: number;
+}

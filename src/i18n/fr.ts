@@ -73,6 +73,16 @@ export const fr = {
     'Paiement sécurisé : vos coordonnées bancaires sont traitées par le prestataire de paiement et ne sont jamais enregistrées par le cinéma.',
   'paiement.reussi': 'Paiement accepté',
   'paiement.merci': 'Merci ! Votre réservation est confirmée.',
+  'billet.titre': 'Votre billet',
+  'billet.salle': 'Salle',
+  'billet.places': 'Places',
+  'billet.version': 'Version',
+  'billet.total': 'Total payé',
+  'billet.qrAlt': 'QR code du billet {code}',
+  'billet.consigne':
+    'Présentez ce QR code à l’entrée de la salle, à partir d’une heure avant la séance. Il n’est valable qu’une fois.',
+  'billet.imprimer': 'Imprimer le billet',
+  'paiement.voirBillet': 'Voir mon billet',
 };
 
 export type Cle = keyof typeof fr;
