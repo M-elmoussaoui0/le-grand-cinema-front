@@ -44,6 +44,17 @@ export const fr = {
   'places.complet': 'Complet',
   'places.dernieres': 'Plus que {n} places',
   'places.restantes': '{n} places',
+  'plan.titre': 'Plan de la salle',
+  'plan.ecran': 'Écran',
+  'plan.place': 'Rangée {rangee}, place {numero}',
+  'plan.libre': 'Libre',
+  'plan.choisie': 'Votre choix',
+  'plan.occupee': 'Occupée',
+  'plan.guichet': 'Vente au guichet',
+  'plan.pmr': 'Place PMR',
+  'plan.aucunePlace': 'Choisissez vos places sur le plan',
+  'plan.selection': '{n} place(s) : {places}',
+  'plan.maximum': '{max} places maximum par réservation',
 };
 
 export type Cle = keyof typeof fr;
