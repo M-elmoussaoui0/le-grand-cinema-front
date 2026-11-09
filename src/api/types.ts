@@ -80,3 +80,19 @@ export interface MaReservation {
   places: string[];
   annulable: boolean;
 }
+
+export interface SuiviDirect {
+  seanceId: number;
+  film: string;
+  salle: string;
+  debut: string;
+  capacite: number;
+  vendues: { enLigne: number; guichet: number; total: number };
+  enAttentePaiement: number;
+  entrees?: number;
+  restantes: number;
+  tauxRemplissage: number;
+  ventesDerniereHeure: number;
+  recettes: number;
+  misAJourA: string;
+}

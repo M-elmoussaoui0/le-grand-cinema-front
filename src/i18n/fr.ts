@@ -127,6 +127,17 @@ export const fr = {
   'guichet.nouveauQuota': 'Nombre de places gardées',
   'guichet.enregistrer': 'Enregistrer le quota',
   'guichet.quotaModifie': 'Quota enregistré : {n} places gardées pour le guichet.',
+  'admin.direct': 'En direct',
+  'direct.titre': 'Séance en direct',
+  'direct.enDirect': 'En direct · {heure}',
+  'direct.remplissage': 'Taux de remplissage',
+  'direct.surCapacite': '{vendues} places vendues sur {capacite}',
+  'direct.enLigne': 'vendues en ligne',
+  'direct.guichet': 'vendues au guichet',
+  'direct.enAttente': 'en attente de paiement',
+  'direct.restantes': 'places restantes',
+  'direct.derniereHeure': 'ventes dans la dernière heure',
+  'direct.recettes': 'recettes',
 };
 
 export type Cle = keyof typeof fr;
