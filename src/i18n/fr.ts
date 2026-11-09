@@ -83,6 +83,20 @@ export const fr = {
     'Présentez ce QR code à l’entrée de la salle, à partir d’une heure avant la séance. Il n’est valable qu’une fois.',
   'billet.imprimer': 'Imprimer le billet',
   'paiement.voirBillet': 'Voir mon billet',
+  'reservations.titre': 'Mes billets',
+  'reservations.aVenir': 'À venir',
+  'reservations.passees': 'Passées',
+  'reservations.aucune': 'Vous n’avez pas encore de réservation.',
+  'reservations.voirProgramme': 'Voir le programme',
+  'reservations.voirBillet': 'Voir le billet',
+  'reservations.payer': 'Finaliser le paiement',
+  'reservations.annuler': 'Annuler',
+  'reservations.confirmerAnnulation': 'Confirmer l’annulation',
+  'reservations.regleAnnulation':
+    'Annulation possible jusqu’à 1 heure avant la séance. Un billet payé est remboursé.',
+  'reservations.statut.payee': 'Payée',
+  'reservations.statut.en_attente': 'En attente de paiement',
+  'reservations.statut.annulee': 'Annulée',
 };
 
 export type Cle = keyof typeof fr;

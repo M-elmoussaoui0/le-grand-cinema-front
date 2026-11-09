@@ -17,6 +17,7 @@ export function Entete() {
             <NavLink to="/" end>
               {t('nav.programme')}
             </NavLink>
+            {utilisateur && <NavLink to="/reservations">{t('nav.billets')}</NavLink>}
             {utilisateur ? (
               <NavLink to="/compte">{t('nav.compte')}</NavLink>
             ) : (
