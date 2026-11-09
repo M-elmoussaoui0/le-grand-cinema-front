@@ -328,3 +328,17 @@ fieldset { border: 1px solid var(--ligne); }
 .choix { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--ligne); border-radius: 12px; cursor: pointer; font-weight: 700; }
 .choix.actif { border-color: var(--accent); background: #2b1714; }
 .choix input { width: auto; min-height: 0; accent-color: var(--accent); }
+
+/* Billet */
+.billet { background: #fbf7f2; color: #1d1814; border-radius: 18px; overflow: hidden; }
+.billet-haut { background: var(--accent); color: #fff; padding: 18px; }
+.billet-infos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0; padding: 18px; border-bottom: 2px dashed #d4c7b8; }
+.billet-infos dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #7a6b5d; }
+.billet-infos dd { margin: 2px 0 0; font-weight: 700; }
+.billet-qr { display: grid; justify-items: center; gap: 8px; padding: 18px; }
+.billet-qr img { image-rendering: pixelated; }
+.billet-qr code { font-size: 0.8rem; color: #7a6b5d; }
+@media print {
+  .entete, .nav, .pied, .bouton { display: none !important; }
+  body { background: #fff; }
+}
