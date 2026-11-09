@@ -7,7 +7,8 @@ import { heure } from '../utils/format';
 import { useDonnees } from '../utils/useDonnees';
 
 export const RAFRAICHISSEMENT_ALERTES_MS = 30_000;
-const VISIBLES = 3;
+/** Sur mobile, le bandeau ne doit pas cacher l'écran : 2 alertes visibles, les autres sur demande. */
+export const VISIBLES = 2;
 
 /**
  * US12 : bandeau d'alertes affiché sur tous les écrans de gestion,

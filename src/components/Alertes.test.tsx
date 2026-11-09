@@ -2,7 +2,7 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Alerte } from '../api/types';
 import { afficher, simulerApi } from '../test-utils';
-import { Alertes, RAFRAICHISSEMENT_ALERTES_MS } from './Alertes';
+import { Alertes, RAFRAICHISSEMENT_ALERTES_MS, VISIBLES } from './Alertes';
 
 const alerte = (seanceId: number, niveau: Alerte['niveau'] = 'attention'): Alerte => ({
   type: niveau === 'critique' ? 'pic_ventes' : 'presque_complet',
@@ -37,10 +37,10 @@ describe('US12 – Être alerté en cas de pic (front)', () => {
     expect(screen.getByRole('link', { name: 'Suivre' })).toHaveAttribute('href', '/admin/direct?seance=4');
   });
 
-  it('limite à 3 alertes visibles et permet de tout afficher', async () => {
+  it(`limite à ${VISIBLES} alertes visibles et permet de tout afficher`, async () => {
     simulerApi({ '/admin/alertes': [1, 2, 3, 4, 5].map((id) => alerte(id)) });
     afficher(<Alertes />);
-    expect(await screen.findAllByRole('listitem')).toHaveLength(3);
+    expect(await screen.findAllByRole('listitem')).toHaveLength(VISIBLES);
     await userEvent.click(screen.getByRole('button', { name: 'Voir les 5 alertes' }));
     expect(screen.getAllByRole('listitem')).toHaveLength(5);
   });
