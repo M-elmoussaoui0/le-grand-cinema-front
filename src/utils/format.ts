@@ -22,3 +22,9 @@ export const prix = (montant: number, locale = 'fr-FR') =>
 export function dateIso(decalageJours = 0): string {
   return new Date(Date.now() + decalageJours * 86_400_000).toLocaleDateString('sv-SE', { timeZone: FUSEAU });
 }
+
+/** Pourcentage selon la langue : « 57,5 % » en français, « 57.5% » en anglais. */
+export function pourcent(valeur: number, locale = 'fr-FR'): string {
+  const nombre = new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(valeur);
+  return locale.startsWith('fr') ? `${nombre} %` : `${nombre}%`;
+}

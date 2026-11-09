@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { envoyer, ErreurApi } from '../api/client';
+import { envoyer } from '../api/client';
 import { ReservationCreee } from '../api/types';
 import { MessageErreur } from '../components/Etat';
 import { useI18n } from '../i18n/I18nContext';
@@ -27,7 +27,7 @@ export function tempsRestant(limite: string, maintenant = Date.now()): string | 
 
 export default function Paiement() {
   const { id } = useParams();
-  const { t, locale } = useI18n();
+  const { t, locale, messageErreur } = useI18n();
   const reservation = useLocation().state as ReservationCreee | null;
   const [moyen, setMoyen] = useState<Moyen>('apple_pay');
   const [jeton, setJeton] = useState<string>(CARTES_TEST[0].jeton);
@@ -54,7 +54,7 @@ export default function Paiement() {
       });
       setCodeBillet(r.codeBillet);
     } catch (e) {
-      setErreur(e instanceof ErreurApi ? e.message : t('commun.erreur'));
+      setErreur(messageErreur(e));
     } finally {
       setEnvoi(false);
     }

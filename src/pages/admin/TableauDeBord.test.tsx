@@ -38,8 +38,8 @@ describe('US11 – Voir le taux de remplissage (front)', () => {
       },
     });
     afficher(<TableauDeBord />);
-    expect(await screen.findByText('57.5 %', { selector: '.chiffre' })).toBeInTheDocument();
-    expect(screen.getByRole('progressbar', { name: 'Nuit Blanche : 57.5 %' })).toBeInTheDocument();
+    expect(await screen.findByText('57,5 %', { selector: '.chiffre' })).toBeInTheDocument();
+    expect(screen.getByRole('progressbar', { name: 'Nuit Blanche : 57,5 %' })).toBeInTheDocument();
     expect(screen.getByText('95 %')).toHaveClass('fort');
     expect(screen.getAllByRole('link', { name: 'Suivre' })[1]).toHaveAttribute(
       'href',

@@ -4,7 +4,7 @@ import { Seance, SuiviDirect } from '../../api/types';
 import { MessageErreur } from '../../components/Etat';
 import { Jauge } from '../../components/Jauge';
 import { useI18n } from '../../i18n/I18nContext';
-import { dateIso, heure, prix } from '../../utils/format';
+import { dateIso, heure, pourcent, prix } from '../../utils/format';
 import { useDonnees } from '../../utils/useDonnees';
 
 /** Fréquence de rafraîchissement du suivi en direct. */
@@ -51,7 +51,7 @@ export default function Direct() {
           </div>
           <Jauge taux={d.tauxRemplissage} libelle={t('direct.remplissage')} />
           <p style={{ margin: 0 }}>
-            <strong style={{ fontSize: '1.4rem' }}>{d.tauxRemplissage} %</strong>{' '}
+            <strong style={{ fontSize: '1.4rem' }}>{pourcent(d.tauxRemplissage, locale)}</strong>{' '}
             <span className="doux">
               {t('direct.surCapacite', { vendues: d.vendues.total, capacite: d.capacite })}
             </span>

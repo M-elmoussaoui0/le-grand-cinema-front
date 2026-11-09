@@ -5,7 +5,7 @@ import { Remplissage } from '../../api/types';
 import { Chargement, MessageErreur } from '../../components/Etat';
 import { Jauge } from '../../components/Jauge';
 import { useI18n } from '../../i18n/I18nContext';
-import { dateIso, heure, prix } from '../../utils/format';
+import { dateIso, heure, pourcent, prix } from '../../utils/format';
 import { useDonnees } from '../../utils/useDonnees';
 
 /** US11 : taux de remplissage du jour, par film et par séance. */
@@ -38,7 +38,7 @@ export default function TableauDeBord() {
         <>
           <div className="chiffres">
             <div>
-              <span className="chiffre">{r.resume.tauxRemplissage} %</span>
+              <span className="chiffre">{pourcent(r.resume.tauxRemplissage, locale)}</span>
               <span className="doux petit">{t('tableau.tauxJour')}</span>
             </div>
             <div>
@@ -63,9 +63,12 @@ export default function TableauDeBord() {
               <div key={f.film} className="pile" style={{ gap: 4 }}>
                 <div className="ligne espace">
                   <span>{f.film}</span>
-                  <strong>{f.tauxRemplissage} %</strong>
+                  <strong>{pourcent(f.tauxRemplissage, locale)}</strong>
                 </div>
-                <Jauge taux={f.tauxRemplissage} libelle={`${f.film} : ${f.tauxRemplissage} %`} />
+                <Jauge
+                  taux={f.tauxRemplissage}
+                  libelle={`${f.film} : ${pourcent(f.tauxRemplissage, locale)}`}
+                />
               </div>
             ))}
           </div>
@@ -92,7 +95,9 @@ export default function TableauDeBord() {
                     <td>
                       {s.vendues}/{s.capacite}
                     </td>
-                    <td className={s.tauxRemplissage >= 90 ? 'fort' : ''}>{s.tauxRemplissage} %</td>
+                    <td className={s.tauxRemplissage >= 90 ? 'fort' : ''}>
+                      {pourcent(s.tauxRemplissage, locale)}
+                    </td>
                     <td>
                       <Link to={`/admin/direct?seance=${s.seanceId}`}>{t('tableau.suivre')}</Link>
                     </td>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { api, envoyer, ErreurApi } from '../api/client';
+import { api, envoyer } from '../api/client';
 import { MaReservation } from '../api/types';
 import { Chargement, MessageErreur } from '../components/Etat';
 import { useI18n } from '../i18n/I18nContext';
@@ -16,7 +16,7 @@ export function separer(reservations: MaReservation[], maintenant = Date.now()) 
 
 /** US13 : retrouver ses réservations et les annuler. */
 export default function MesReservations() {
-  const { t, locale } = useI18n();
+  const { t, locale, messageErreur } = useI18n();
   const { donnees, erreur, chargement, recharger } = useDonnees(
     () => api<MaReservation[]>('/reservations/moi'),
     [],
@@ -30,7 +30,7 @@ export default function MesReservations() {
       setMessage({ type: 'succes', texte: r.message });
       await recharger();
     } catch (e) {
-      setMessage({ type: 'erreur', texte: e instanceof ErreurApi ? e.message : t('commun.erreur') });
+      setMessage({ type: 'erreur', texte: messageErreur(e) });
     } finally {
       setAConfirmer(null);
     }
