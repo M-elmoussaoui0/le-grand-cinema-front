@@ -300,3 +300,5 @@ a:focus-visible {
 .horaire { display: grid; gap: 2px; padding: 10px; border-radius: 12px; border: 1px solid var(--ligne); background: var(--surface-2); text-decoration: none; text-align: center; }
 .horaire:hover { border-color: var(--accent); }
 .horaire strong { font-size: 1.1rem; }
+.horaire .puce { justify-self: center; font-size: 0.7rem; padding: 1px 8px; }
+.horaire.complet { opacity: 0.55; }

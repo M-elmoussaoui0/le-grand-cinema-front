@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api/client';
 import { Film, Seance } from '../api/types';
 import { Chargement, MessageErreur } from '../components/Etat';
+import { PlacesRestantes } from '../components/PlacesRestantes';
 import { useI18n } from '../i18n/I18nContext';
 import { dateIso, heure, jourCourt } from '../utils/format';
 import { useDonnees } from '../utils/useDonnees';
@@ -81,11 +82,16 @@ export default function Programmation() {
               <ul className="horaires">
                 {seances.map((s) => (
                   <li key={s.id}>
-                    <Link to={`/seances/${s.id}`} className="horaire">
+                    <Link
+                      to={`/seances/${s.id}`}
+                      className={`horaire ${s.placesRestantes?.complet ? 'complet' : ''}`}
+                      aria-disabled={s.placesRestantes?.complet}
+                    >
                       <strong>{heure(s.debut, locale)}</strong>
                       <span className="petit doux">
                         {s.salle.nom} · {s.langue}
                       </span>
+                      <PlacesRestantes places={s.placesRestantes} />
                     </Link>
                   </li>
                 ))}

@@ -13,6 +13,13 @@ export interface Salle {
   capacite: number;
 }
 
+export interface PlacesRestantes {
+  enLigne: number;
+  guichet: number;
+  total: number;
+  complet: boolean;
+}
+
 export interface Seance {
   id: number;
   debut: string;
@@ -21,4 +28,5 @@ export interface Seance {
   langue: 'VF' | 'VOST';
   film: Film;
   salle: Salle;
+  placesRestantes?: PlacesRestantes;
 }
