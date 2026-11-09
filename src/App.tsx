@@ -5,6 +5,7 @@ import { useI18n } from './i18n/I18nContext';
 import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
+import Paiement from './pages/Paiement';
 import Programmation from './pages/Programmation';
 import SeancePage from './pages/SeancePage';
 
@@ -36,6 +37,14 @@ export default function App() {
             element={
               <RouteProtegee>
                 <Compte />
+              </RouteProtegee>
+            }
+          />
+          <Route
+            path="/reservations/:id/paiement"
+            element={
+              <RouteProtegee>
+                <Paiement />
               </RouteProtegee>
             }
           />

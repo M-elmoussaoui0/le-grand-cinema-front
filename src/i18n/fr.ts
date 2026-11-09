@@ -56,6 +56,23 @@ export const fr = {
   'plan.selection': '{n} place(s) : {places}',
   'plan.maximum': '{max} places maximum par réservation',
   'plan.reserver': 'Réserver',
+  'paiement.titre': 'Paiement',
+  'paiement.places': '{n} place(s)',
+  'paiement.delai': 'Vos places sont bloquées pendant encore {temps}.',
+  'paiement.expire': 'Le délai de paiement est dépassé : les places ont été libérées.',
+  'paiement.moyen': 'Moyen de paiement',
+  'paiement.apple_pay': 'Apple Pay',
+  'paiement.google_pay': 'Google Pay',
+  'paiement.carte': 'Carte bancaire',
+  'paiement.carteTest': 'Carte de test (mode démonstration)',
+  'paiement.carteAcceptee': 'Visa de test – paiement accepté',
+  'paiement.carteRefusee': 'Carte de test – paiement refusé',
+  'paiement.payer': 'Payer {montant}',
+  'paiement.payerSimple': 'Payer',
+  'paiement.securite':
+    'Paiement sécurisé : vos coordonnées bancaires sont traitées par le prestataire de paiement et ne sont jamais enregistrées par le cinéma.',
+  'paiement.reussi': 'Paiement accepté',
+  'paiement.merci': 'Merci ! Votre réservation est confirmée.',
 };
 
 export type Cle = keyof typeof fr;
