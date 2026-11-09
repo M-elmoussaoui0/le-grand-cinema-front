@@ -1,8 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useAuth } from '../auth/AuthContext';
 import { useI18n } from '../i18n/I18nContext';
 
 export function Entete() {
   const { t } = useI18n();
+  const { utilisateur } = useAuth();
   return (
     <header className="entete">
       <div className="entete-int">
@@ -15,6 +17,11 @@ export function Entete() {
             <NavLink to="/" end>
               {t('nav.programme')}
             </NavLink>
+            {utilisateur ? (
+              <NavLink to="/compte">{t('nav.compte')}</NavLink>
+            ) : (
+              <NavLink to="/connexion">{t('nav.connexion')}</NavLink>
+            )}
           </nav>
         </div>
       </div>

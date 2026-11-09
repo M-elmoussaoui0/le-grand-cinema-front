@@ -1,13 +1,16 @@
 import { render } from '@testing-library/react';
 import { ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { AuthProvider } from './auth/AuthContext';
 import { I18nProvider } from './i18n/I18nContext';
 
 /** Affiche un composant avec les mêmes fournisseurs que l'application. */
 export function afficher(element: ReactElement, { route = '/' } = {}) {
   return render(
     <I18nProvider>
-      <MemoryRouter initialEntries={[route]}>{element}</MemoryRouter>
+      <AuthProvider>
+        <MemoryRouter initialEntries={[route]}>{element}</MemoryRouter>
+      </AuthProvider>
     </I18nProvider>,
   );
 }
