@@ -42,3 +42,28 @@ Format : `type: description` (convention Conventional Commits)
 - `feat: ajout du plan de salle interactif`
 - `fix: blocage de la place pendant le paiement`
 - `docs: mise à jour de la convention de branches`
+
+## Stack technique
+
+- **React 18** avec **TypeScript**, construit avec **Vite**
+- **React Router** : navigation entre les écrans
+- **Vitest** et **Testing Library** : tests unitaires des composants
+- **GitHub Actions** : lint, tests et build à chaque Pull Request
+- Interface pensée d'abord pour le téléphone (mobile first)
+
+## Démarrer le projet en local
+
+```bash
+npm install
+cp .env.example .env      # adresse de l'API (par défaut http://localhost:3000/api)
+npm run dev               # application sur http://localhost:5173
+```
+
+## Scripts
+
+| Commande | Rôle |
+|---|---|
+| `npm run dev` | Démarre l'application en mode développement |
+| `npm run lint` | Vérifie la qualité du code (ESLint) |
+| `npm test` | Lance les tests unitaires (Vitest) |
+| `npm run build` | Construit la version de production dans `dist/` |
