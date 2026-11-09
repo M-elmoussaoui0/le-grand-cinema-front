@@ -8,6 +8,7 @@ export default function AdminLayout() {
     <section className="pile">
       <nav className="onglets" aria-label={t('nav.admin')}>
         <NavLink to="/admin/seances">{t('admin.seances')}</NavLink>
+        <NavLink to="/admin/guichet">{t('admin.guichet')}</NavLink>
       </nav>
       <Outlet />
     </section>
