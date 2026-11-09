@@ -367,3 +367,10 @@ fieldset { border: 1px solid var(--ligne); }
 .alerte-ligne { display: flex; justify-content: space-between; gap: 12px; padding: 8px 10px; border-radius: 10px; font-size: 0.9rem; border-left: 4px solid var(--or); background: #2a2114; }
 .alerte-ligne.critique { border-left-color: var(--accent); background: #2b1513; }
 .alerte-ligne a { flex: none; font-weight: 700; }
+
+/* Contrôle des billets */
+.verdict { display: grid; gap: 4px; padding: 20px; border-radius: var(--rayon); font-size: 1.05rem; }
+.verdict strong { font-size: 1.6rem; }
+.verdict.ok { background: #14532d; color: #dcfce7; }
+.verdict.refus { background: #7f1d1d; color: #fee2e2; }
+.camera { width: 100%; border-radius: 12px; background: #000; aspect-ratio: 4 / 3; object-fit: cover; }

@@ -12,6 +12,7 @@ export default function AdminLayout() {
         <NavLink to="/admin/seances">{t('admin.seances')}</NavLink>
         <NavLink to="/admin/direct">{t('admin.direct')}</NavLink>
         <NavLink to="/admin/guichet">{t('admin.guichet')}</NavLink>
+        <NavLink to="/admin/scanner">{t('admin.scanner')}</NavLink>
       </nav>
       <Alertes />
       <Outlet />
