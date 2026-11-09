@@ -291,3 +291,12 @@ a:focus-visible {
     padding-bottom: 24px;
   }
 }
+
+/* Programmation */
+.defilement { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.jour { flex: none; background: var(--surface); color: var(--texte-doux); border: 1px solid var(--ligne); border-radius: 12px; padding: 10px 14px; font-weight: 700; cursor: pointer; text-transform: capitalize; min-height: 46px; }
+.jour.actif { background: var(--texte); color: var(--fond); border-color: var(--texte); }
+.horaires { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.horaire { display: grid; gap: 2px; padding: 10px; border-radius: 12px; border: 1px solid var(--ligne); background: var(--surface-2); text-decoration: none; text-align: center; }
+.horaire:hover { border-color: var(--accent); }
+.horaire strong { font-size: 1.1rem; }
