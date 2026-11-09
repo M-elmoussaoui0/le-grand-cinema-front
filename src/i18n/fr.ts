@@ -138,6 +138,16 @@ export const fr = {
   'direct.restantes': 'places restantes',
   'direct.derniereHeure': 'ventes dans la dernière heure',
   'direct.recettes': 'recettes',
+  'admin.tableau': 'Tableau de bord',
+  'tableau.titre': 'Tableau de bord',
+  'tableau.tauxJour': 'remplissage du jour',
+  'tableau.placesVendues': 'places vendues sur {capacite}',
+  'tableau.seances': 'séances',
+  'tableau.parFilm': 'Remplissage par film',
+  'tableau.parSeance': 'Remplissage par séance',
+  'tableau.vendues': 'Vendues',
+  'tableau.taux': 'Taux',
+  'tableau.suivre': 'Suivre',
 };
 
 export type Cle = keyof typeof fr;

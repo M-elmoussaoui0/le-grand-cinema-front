@@ -7,6 +7,7 @@ export default function AdminLayout() {
   return (
     <section className="pile">
       <nav className="onglets" aria-label={t('nav.admin')}>
+        <NavLink to="/admin/tableau-de-bord">{t('admin.tableau')}</NavLink>
         <NavLink to="/admin/seances">{t('admin.seances')}</NavLink>
         <NavLink to="/admin/direct">{t('admin.direct')}</NavLink>
         <NavLink to="/admin/guichet">{t('admin.guichet')}</NavLink>
