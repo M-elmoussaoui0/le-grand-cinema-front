@@ -58,8 +58,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(20, 17, 15, 0.92);
-  backdrop-filter: blur(8px);
+  /* Fond opaque, sans backdrop-filter : ce filtre ferait de l'en-tête le repère
+     de la barre de navigation fixe et la remonterait en haut de l'écran sur mobile */
+  background: var(--fond);
   border-bottom: 1px solid var(--ligne);
 }
 .entete-int {
@@ -344,7 +345,7 @@ fieldset { border: 1px solid var(--ligne); }
 }
 
 /* Espace de gestion */
-.onglets { display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid var(--ligne); padding-bottom: 8px; }
+.onglets { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 1px solid var(--ligne); padding-bottom: 8px; }
 .onglets a { flex: none; padding: 8px 14px; border-radius: 999px; text-decoration: none; color: var(--texte-doux); font-weight: 700; font-size: 0.9rem; }
 .onglets a.active { background: var(--surface-2); color: var(--texte); }
 .grille-admin { display: grid; gap: 16px; }
