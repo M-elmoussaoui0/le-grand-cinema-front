@@ -58,7 +58,6 @@ describe('US3 – Choisir sa place sur un plan (front)', () => {
     afficher(<PlanAvecEtat />);
     await userEvent.click(screen.getByRole('button', { name: 'Rangée A, place 1 (Place PMR)' }));
     await userEvent.click(screen.getByRole('button', { name: 'Rangée B, place 1' }));
-    expect(screen.getByRole('status', { hidden: true }) ?? screen.getByText('A1,B1')).toBeTruthy();
     expect(screen.getByText('A1,B1')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Rangée B, place 1' })).toHaveAttribute('aria-pressed', 'true');
   });

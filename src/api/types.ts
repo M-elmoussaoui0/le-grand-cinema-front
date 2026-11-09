@@ -45,3 +45,12 @@ export interface Plan {
   placesRestantes: PlacesRestantes;
   rangees: { rangee: string; places: PlacePlan[] }[];
 }
+
+export interface ReservationCreee {
+  id: number;
+  seanceId: number;
+  statut: 'en_attente';
+  montantTotal: number;
+  payerAvant: string;
+  placeIds: number[];
+}

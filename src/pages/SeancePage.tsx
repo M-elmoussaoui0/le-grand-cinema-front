@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { api } from '../api/client';
-import { Plan, Seance } from '../api/types';
+import { useNavigate, useParams } from 'react-router-dom';
+import { api, envoyer, ErreurApi } from '../api/client';
+import { Plan, ReservationCreee, Seance } from '../api/types';
+import { useAuth } from '../auth/AuthContext';
 import { Chargement, MessageErreur } from '../components/Etat';
 import { PLACES_MAX, PlanSalle } from '../components/PlanSalle';
 import { useI18n } from '../i18n/I18nContext';
@@ -19,8 +20,37 @@ export default function SeancePage() {
   const { id } = useParams();
   const { t, locale } = useI18n();
   const [selection, setSelection] = useState<number[]>([]);
+  const [erreur, setErreur] = useState<string | null>(null);
+  const [envoi, setEnvoi] = useState(false);
+  const { utilisateur } = useAuth();
+  const navigate = useNavigate();
   const seance = useDonnees(() => api<Seance>(`/seances/${id}`), [id]);
   const plan = useDonnees(() => api<Plan>(`/seances/${id}/plan`), [id]);
+
+  /**
+   * US5 : la réservation est confirmée par l'API. Si un autre spectateur a pris une des places
+   * entre-temps (erreur 409), on l'explique et on recharge le plan à jour.
+   */
+  async function reserver() {
+    if (!utilisateur) return navigate('/connexion', { state: { retour: `/seances/${id}` } });
+    setEnvoi(true);
+    setErreur(null);
+    try {
+      const r = await envoyer<ReservationCreee>('/reservations', 'POST', {
+        seanceId: Number(id),
+        placeIds: selection,
+      });
+      navigate(`/reservations/${r.id}/paiement`, { state: r });
+    } catch (e) {
+      setErreur(e instanceof ErreurApi ? e.message : t('commun.erreur'));
+      if (e instanceof ErreurApi && e.statut === 409) {
+        setSelection([]);
+        await plan.recharger();
+      }
+    } finally {
+      setEnvoi(false);
+    }
+  }
 
   if (seance.chargement || plan.chargement) return <Chargement />;
   if (seance.erreur || !seance.donnees)
@@ -37,6 +67,7 @@ export default function SeancePage() {
         </p>
       </div>
 
+      {erreur && <MessageErreur message={erreur} />}
       {plan.erreur && <MessageErreur message={plan.erreur} onReessayer={plan.recharger} />}
       {plan.donnees && <PlanSalle plan={plan.donnees} selection={selection} onChange={setSelection} />}
 
@@ -57,6 +88,9 @@ export default function SeancePage() {
                 : prix(selection.length * s.prix, locale)}
             </div>
           </div>
+          <button className="bouton" disabled={selection.length === 0 || envoi} onClick={reserver}>
+            {t('plan.reserver')}
+          </button>
         </div>
       )}
     </section>
