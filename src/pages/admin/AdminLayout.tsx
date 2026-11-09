@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { Alertes } from '../../components/Alertes';
 import { useI18n } from '../../i18n/I18nContext';
 
 /** Espace de gestion réservé au personnel du cinéma. */
@@ -12,6 +13,7 @@ export default function AdminLayout() {
         <NavLink to="/admin/direct">{t('admin.direct')}</NavLink>
         <NavLink to="/admin/guichet">{t('admin.guichet')}</NavLink>
       </nav>
+      <Alertes />
       <Outlet />
     </section>
   );
