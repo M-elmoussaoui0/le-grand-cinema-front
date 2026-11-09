@@ -18,6 +18,7 @@ export function Entete() {
               {t('nav.programme')}
             </NavLink>
             {utilisateur && <NavLink to="/reservations">{t('nav.billets')}</NavLink>}
+            {utilisateur?.role === 'admin' && <NavLink to="/admin">{t('nav.admin')}</NavLink>}
             {utilisateur ? (
               <NavLink to="/compte">{t('nav.compte')}</NavLink>
             ) : (
