@@ -6,6 +6,7 @@ import BilletPage from './pages/BilletPage';
 import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
+import MesReservations from './pages/MesReservations';
 import Paiement from './pages/Paiement';
 import Programmation from './pages/Programmation';
 import SeancePage from './pages/SeancePage';
@@ -54,6 +55,14 @@ export default function App() {
             element={
               <RouteProtegee>
                 <BilletPage />
+              </RouteProtegee>
+            }
+          />
+          <Route
+            path="/reservations"
+            element={
+              <RouteProtegee>
+                <MesReservations />
               </RouteProtegee>
             }
           />

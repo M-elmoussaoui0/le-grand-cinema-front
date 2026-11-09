@@ -66,3 +66,17 @@ export interface Billet {
   places: string[];
   montantTotal: number;
 }
+
+export interface MaReservation {
+  id: number;
+  statut: 'en_attente' | 'payee' | 'annulee';
+  montantTotal: number;
+  codeBillet: string | null;
+  seanceId: number;
+  debut: string;
+  langue: string;
+  film: string;
+  salle: string;
+  places: string[];
+  annulable: boolean;
+}
