@@ -13,6 +13,28 @@ export const fr = {
   'pied.mentions': 'Projet de démonstration – paiements simulés en mode test.',
   'introuvable.titre': 'Page introuvable',
   'introuvable.lien': 'Retour au programme',
+  'connexion.titre': 'Connexion',
+  'connexion.email': 'Adresse e-mail',
+  'connexion.motDePasse': 'Mot de passe',
+  'connexion.valider': 'Se connecter',
+  'connexion.pasDeCompte': 'Pas encore de compte ?',
+  'connexion.creerCompte': 'Créer un compte',
+  'connexion.demo': 'Compte de démonstration : client@legrandcinema.fr / Demo2026!',
+  'inscription.titre': 'Créer un compte',
+  'inscription.prenom': 'Prénom',
+  'inscription.nom': 'Nom',
+  'inscription.regleMotDePasse': '8 caractères minimum, avec une majuscule, une minuscule et un chiffre.',
+  'inscription.rgpd':
+    "J'accepte que mes nom, prénom et e-mail soient utilisés uniquement pour gérer mes réservations. Je peux supprimer mon compte à tout moment.",
+  'inscription.valider': 'Créer mon compte',
+  'compte.titre': 'Mon compte',
+  'compte.deconnexion': 'Se déconnecter',
+  'compte.donnees': 'Mes données personnelles',
+  'compte.explicationSuppression':
+    'La suppression efface vos nom, prénom et e-mail. Vos réservations passées restent anonymes pour la comptabilité du cinéma.',
+  'compte.supprimer': 'Supprimer mon compte',
+  'compte.confirmerSuppression': 'Oui, supprimer définitivement',
+  'compte.annuler': 'Annuler',
 };
 
 export type Cle = keyof typeof fr;
