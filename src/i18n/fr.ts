@@ -55,6 +55,7 @@ export const fr = {
   'plan.aucunePlace': 'Choisissez vos places sur le plan',
   'plan.selection': '{n} place(s) : {places}',
   'plan.maximum': '{max} places maximum par réservation',
+  'plan.reserver': 'Réserver',
 };
 
 export type Cle = keyof typeof fr;
