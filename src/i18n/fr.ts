@@ -151,6 +151,16 @@ export const fr = {
   'alertes.titre': 'Alertes',
   'alertes.toutes': 'Voir les {n} alertes',
   'alertes.moins': 'Réduire',
+  'admin.scanner': 'Contrôle',
+  'scanner.titre': 'Contrôle des billets',
+  'scanner.code': 'Code du billet',
+  'scanner.verifier': 'Vérifier le billet',
+  'scanner.aide': 'Scannez le QR code avec la douchette, ou saisissez le code imprimé sous le QR code.',
+  'scanner.camera': 'Scanner avec la caméra',
+  'scanner.arreterCamera': 'Arrêter la caméra',
+  'scanner.valide': 'Entrée autorisée',
+  'scanner.refuse': 'Entrée refusée',
+  'direct.entrees': 'spectateurs entrés',
 };
 
 export type Cle = keyof typeof fr;

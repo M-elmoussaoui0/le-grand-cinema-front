@@ -5,6 +5,7 @@ import { useI18n } from './i18n/I18nContext';
 import AdminLayout from './pages/admin/AdminLayout';
 import Direct from './pages/admin/Direct';
 import Guichet from './pages/admin/Guichet';
+import Scanner from './pages/admin/Scanner';
 import Seances from './pages/admin/Seances';
 import TableauDeBord from './pages/admin/TableauDeBord';
 import BilletPage from './pages/BilletPage';
@@ -84,6 +85,7 @@ export default function App() {
             <Route path="seances" element={<Seances />} />
             <Route path="direct" element={<Direct />} />
             <Route path="guichet" element={<Guichet />} />
+            <Route path="scanner" element={<Scanner />} />
           </Route>
           <Route path="*" element={<Introuvable />} />
         </Routes>

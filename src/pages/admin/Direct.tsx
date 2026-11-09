@@ -69,6 +69,12 @@ export default function Direct() {
               <span className="chiffre">{d.enAttentePaiement}</span>
               <span className="doux petit">{t('direct.enAttente')}</span>
             </div>
+            {d.entrees !== undefined && (
+              <div>
+                <span className="chiffre">{d.entrees}</span>
+                <span className="doux petit">{t('direct.entrees')}</span>
+              </div>
+            )}
             <div>
               <span className="chiffre">{d.restantes}</span>
               <span className="doux petit">{t('direct.restantes')}</span>
