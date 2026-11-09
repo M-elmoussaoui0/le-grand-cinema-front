@@ -342,3 +342,12 @@ fieldset { border: 1px solid var(--ligne); }
   .entete, .nav, .pied, .bouton { display: none !important; }
   body { background: #fff; }
 }
+
+/* Espace de gestion */
+.onglets { display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid var(--ligne); padding-bottom: 8px; }
+.onglets a { flex: none; padding: 8px 14px; border-radius: 999px; text-decoration: none; color: var(--texte-doux); font-weight: 700; font-size: 0.9rem; }
+.onglets a.active { background: var(--surface-2); color: var(--texte); }
+.grille-admin { display: grid; gap: 16px; }
+@media (min-width: 860px) { .grille-admin { grid-template-columns: 1fr 1fr; align-items: start; } }
+.liste-seances { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.liste-seances .carte { padding: 12px; }

@@ -97,6 +97,22 @@ export const fr = {
   'reservations.statut.payee': 'Payée',
   'reservations.statut.en_attente': 'En attente de paiement',
   'reservations.statut.annulee': 'Annulée',
+  'admin.seances': 'Séances',
+  'admin.nouvelleSeance': 'Nouvelle séance',
+  'admin.film': 'Film',
+  'admin.salle': 'Salle',
+  'admin.date': 'Date',
+  'admin.heure': 'Heure de début',
+  'admin.prix': 'Prix (€)',
+  'admin.langue': 'Version',
+  'admin.quota': 'Places gardées pour le guichet',
+  'admin.quotaDefaut': '10 % de la salle par défaut',
+  'admin.creer': 'Créer la séance',
+  'admin.regleFin':
+    'La fin est calculée : durée du film + 15 minutes de nettoyage. Deux séances ne peuvent pas se chevaucher dans une salle.',
+  'admin.seanceCreee': 'Séance créée. Fin prévue à {fin}.',
+  'admin.seancesDuJour': 'Séances de ce jour',
+  'admin.placesLibres': 'places libres',
 };
 
 export type Cle = keyof typeof fr;

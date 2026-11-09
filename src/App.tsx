@@ -1,7 +1,9 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { RouteProtegee } from './auth/RouteProtegee';
 import { Entete } from './components/Entete';
 import { useI18n } from './i18n/I18nContext';
+import AdminLayout from './pages/admin/AdminLayout';
+import Seances from './pages/admin/Seances';
 import BilletPage from './pages/BilletPage';
 import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
@@ -66,6 +68,17 @@ export default function App() {
               </RouteProtegee>
             }
           />
+          <Route
+            path="/admin"
+            element={
+              <RouteProtegee role="admin">
+                <AdminLayout />
+              </RouteProtegee>
+            }
+          >
+            <Route index element={<Navigate to="/admin/seances" replace />} />
+            <Route path="seances" element={<Seances />} />
+          </Route>
           <Route path="*" element={<Introuvable />} />
         </Routes>
       </main>
