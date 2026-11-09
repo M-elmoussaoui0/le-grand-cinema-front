@@ -322,3 +322,9 @@ a:focus-visible {
 .legende .place { width: 18px; height: 18px; cursor: default; font-size: 0.6rem; }
 .barre-action { position: sticky; bottom: 64px; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 12px 16px; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4); }
 @media (min-width: 760px) { .barre-action { bottom: 16px; } }
+
+/* Paiement */
+fieldset { border: 1px solid var(--ligne); }
+.choix { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--ligne); border-radius: 12px; cursor: pointer; font-weight: 700; }
+.choix.actif { border-color: var(--accent); background: #2b1714; }
+.choix input { width: auto; min-height: 0; accent-color: var(--accent); }
