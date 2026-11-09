@@ -28,8 +28,16 @@ export function useDonnees<T>(charger: () => Promise<T>, dependances: unknown[],
     setChargement(true);
     executer();
     if (!intervalle) return;
-    const minuterie = setInterval(executer, intervalle);
-    return () => clearInterval(minuterie);
+    // US15 : pas de rafraîchissement quand l'onglet est en arrière-plan (moins de charge sur l'API)
+    const minuterie = setInterval(() => {
+      if (document.visibilityState === 'visible') executer();
+    }, intervalle);
+    const auRetour = () => document.visibilityState === 'visible' && executer();
+    document.addEventListener('visibilitychange', auRetour);
+    return () => {
+      clearInterval(minuterie);
+      document.removeEventListener('visibilitychange', auRetour);
+    };
   }, [executer, intervalle]);
 
   return { donnees, erreur, chargement, recharger: executer };
