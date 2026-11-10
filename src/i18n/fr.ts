@@ -19,7 +19,7 @@ export const fr = {
   'connexion.valider': 'Se connecter',
   'connexion.pasDeCompte': 'Pas encore de compte ?',
   'connexion.creerCompte': 'Créer un compte',
-  'connexion.demo': 'Compte de démonstration : client@legrandcinema.fr / Demo2026!',
+  'connexion.demo': 'Compte de démonstration : client@legrandcinema.fr / Studi2026',
   'inscription.titre': 'Créer un compte',
   'inscription.prenom': 'Prénom',
   'inscription.nom': 'Nom',

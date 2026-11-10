@@ -22,7 +22,7 @@ describe('US16 – Protéger les données (front)', () => {
       { route: '/connexion' },
     );
     await userEvent.type(screen.getByLabelText('Adresse e-mail'), 'client@legrandcinema.fr');
-    await userEvent.type(screen.getByLabelText('Mot de passe'), 'Demo2026!');
+    await userEvent.type(screen.getByLabelText('Mot de passe'), 'Studi2026');
     await userEvent.click(screen.getByRole('button', { name: 'Se connecter' }));
     expect(await screen.findByText('Accueil')).toBeInTheDocument();
     expect(jetonStocke.lire()).toBe('jeton-123');
