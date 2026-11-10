@@ -24,7 +24,7 @@ export const en: Record<Cle, string> = {
   'connexion.valider': 'Sign in',
   'connexion.pasDeCompte': 'No account yet?',
   'connexion.creerCompte': 'Create an account',
-  'connexion.demo': 'Demo account: client@legrandcinema.fr / Demo2026!',
+  'connexion.demo': 'Demo account: client@legrandcinema.fr / Studi2026',
   'inscription.titre': 'Create an account',
   'inscription.prenom': 'First name',
   'inscription.nom': 'Last name',
